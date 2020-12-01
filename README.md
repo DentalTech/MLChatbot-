@@ -1,0 +1,1 @@
+A Machine Learning chatbot for a dentist service using Wit.ai and docker. Allows the user to speak to a chatbot in relation to questions like which dentist is available, available timeslots and booking an appointment 
