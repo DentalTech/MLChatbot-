@@ -1,0 +1,38 @@
+.my-heading {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#messages {
+    margin-top: 100px;
+    margin-bottom: 150px;
+    overflow: auto;
+}
+
+#loading{
+    margin-top: 10px;
+}
+
+.chat-message {
+  padding: 6px;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.bot-message {
+    margin-left: 50%;
+    width: auto;
+    float: right;
+    clear: both;
+    background: green;
+    color: white;
+}
+
+.human-message {
+    margin-right: 50%;
+    width: auto;
+    float: left;
+    clear: both;
+    background: dodgerblue;
+    color: white;
+}

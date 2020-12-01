@@ -1,0 +1,91 @@
+---
+swagger: '2.0'
+info:
+  description: "This is the dentist timeslot service"
+  version: 1.0.0
+  title: "Timeslot Service"
+  contact:
+    email: "z3417347@ad.unsw.edu.au"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /timeslot:
+    put:
+      tags:
+      - "timeslot"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      description: "Update an appointment for the dentist"
+      parameters:
+      - in: "body"
+        name: "booking"
+        required: true
+        schema:
+          "$ref": "#/definitions/booking"
+      responses:
+        '200':
+          description: "Appointment has been updated successfully"
+          schema:
+            $ref: "#/definitions/booking"
+        '400':
+          description: "Unable to succesfully update the order"
+    delete:
+      tags:
+      - "timeslot"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      description: "Cancel an appointment"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          "$ref": "#/definitions/booking"
+      responses:
+        '204':
+          description: "Appointment has been successfully been deleted"
+        '404':
+          description: "Unable to delete resource"
+  /timeslot/{dentistName}:
+    get:
+      tags:
+      - "timeslot"
+      description: "Get available timeslots for all the specific dentist"
+      consumes:
+      - "text/plain"
+      produces:
+      - "applications/json"
+      parameters:
+      - in: "path"
+        name: "dentistName"
+        description: "The name of the dentist"
+        required: true
+        type: "string"
+      responses:
+        '200':
+          description: "Successfully returned all appointments"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/booking"
+        '404':
+          description: "Appointments not found"
+definitions:
+  booking:
+    type: "object"
+    properties:
+      appointmentTime:
+        type: "string"
+        example: "10"
+      dentistName:
+        type: "string"
+        example: "Dr.John"
+      patientName:
+        type: "string"
+        example: "Alex"

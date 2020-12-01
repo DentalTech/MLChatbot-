@@ -1,0 +1,88 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is the dentist service",
+    "version": "1.0.0",
+    "title": "Dentist Service",
+    "contact": {
+      "email": "z3417347@ad.unsw.edu.au"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/dentist": {
+      "get": {
+        "tags": [
+          "dentists"
+        ],
+        "summary": "Gets the list of all available dentists",
+        "produces": [
+          "applications/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully returned the names of all dentists"
+          },
+          "404": {
+            "description": "No dentists found"
+          }
+        }
+      }
+    },
+    "/dentist/{dentistName}": {
+      "get": {
+        "tags": [
+          "dentists"
+        ],
+        "summary": "Gets details for the specified dentist",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "applications/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dentistName",
+            "description": "The name of the dentist",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully returned details for the dentist",
+            "schema": {
+              "$ref": "#/definitions/dentist"
+            }
+          },
+          "404": {
+            "description": "Dentist not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "dentist": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "specialisation": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

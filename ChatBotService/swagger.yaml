@@ -1,0 +1,44 @@
+swagger: '2.0'
+info:
+  description: "This is the Chat Bot Service"
+  version: 1.0.0
+  title: "Chat Bot Service"
+  contact:
+    email: "z3417347@ad.unsw.edu.au"
+schemes:
+  - "http"
+  - "https"
+consumes: 
+- "application/json"
+produces: 
+- "application/json"
+paths:
+  /input:
+    post:
+      tags: 
+        - "input message"
+      summary: "Send the next message" 
+      consumes:
+        - "text/plain"
+      parameters:
+        - in: "body"
+          name: "message"
+          required: true
+          schema:
+            type: "string" 
+            example: "Book an appointment for Alex with Dr.John at 2pm"
+      responses:
+        200:
+          description: "Message succssfully sent"
+        400: 
+          description: "Failure, message send was unsuccessful"
+          
+
+        
+      
+      
+      
+      
+      
+  
+      

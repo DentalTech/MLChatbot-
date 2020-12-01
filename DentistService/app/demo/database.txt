@@ -1,0 +1,20 @@
+{
+"Dentists": 
+	[
+		{
+		"name": "Dr.John",
+ 	  	"location": "Randwick",
+		"specialisation": "Orthodontics"
+		},
+		{
+		"name": "Dr.Sally",
+ 	  	"location": "Kensington",
+		"specialisation": "Oral Surgery"
+		},
+		{
+		"name": "Dr.Steve",
+ 	  	"location": "Sydney",
+		"specialisation": "Paediatric Dentistry"
+		}
+	]
+}

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    	<meta name="keywords" content="Chat Window Template"/>
+		<meta name="author" content="Ruben" />
+
+		<link rel="stylesheet" type="text/css" href="../static/bootstrap.min.css">
+		<link rel="stylesheet" href="../static/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../static/my-style.css">
+
+		<script src="../static/jquery-3.3.1.min.js"></script>
+    	<script src="../static/bootstrap.min.js"></script>
+		<script src="../static/messages.js"></script>
+
+		<title>ChabtBot</title>
+
+	</head>
+
+	<body id="main-body">
+		<div class="container" id="main-div">
+			<div id="heading" class="navbar navbar-inverse navbar-fixed-top">
+				<h2 class="my-heading">ChatBot</h2>
+			</div>
+			<div id="messages" data-spy="scroll">
+				<!-- messages get added here -->
+			</div>
+			<div id = "SendMessage" class="navbar navbar-default navbar-fixed-bottom">
+				<textarea class="form-control" id="type-message"></textarea>
+				<button type="button" class="btn btn-success btn-lg pull-right" id="send-message" onclick="send()">SEND</button>
+			</div>
+		</div>
+	</body>
+</html>
